@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { forkJoin, Observable } from 'rxjs';
+import { delay, forkJoin, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -35,4 +35,7 @@ firstBasicObservable(): Observable<number>{
    return forkJoin([firstData,secondData]);
   }
   
+  changeDetectionExample():Observable<any>{
+    return of("From service!!").pipe(delay(2000));
+  }
 }

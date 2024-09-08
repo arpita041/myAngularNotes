@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HighlightDirective } from './highlight.directive';
 import { ObservablesExampleService } from './observables-example.service';
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'myAngularNotes';
-  constructor(private observableEx:ObservablesExampleService){}
+  myData="hello";
+  constructor(private observableEx:ObservablesExampleService, private cdr:ChangeDetectorRef ){}
 
   ngOnInit(){
     this.observableEx.firstBasicObservable().subscribe({
@@ -24,6 +27,7 @@ export class AppComponent {
     });
 this.getPostsData();  
 this.get2Datas();  
+this.changeDetectionExample();
   }
 
   getPostsData(){
@@ -52,5 +56,15 @@ this.get2Datas();
         console.log("completed")
       }
     })
+  }
+
+  //change detection example by calling manual changeDetectorRef
+
+  changeDetectionExample(){
+    this.observableEx.changeDetectionExample().subscribe((data)=>{
+   this.myData = data;
+   this.cdr.detectChanges(); // Manually trigger change detection
+    })
+
   }
 }
