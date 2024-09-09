@@ -2,6 +2,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HighlightDirective } from './highlight.directive';
 import { ObservablesExampleService } from './observables-example.service';
 import { ChangeDetectorRef } from '@angular/core';
+import { BasicPipePipe } from './basic-pipe.pipe';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +13,7 @@ import { ChangeDetectorRef } from '@angular/core';
 export class AppComponent {
   title = 'myAngularNotes';
   myData="hello";
+  value=1;
   constructor(private observableEx:ObservablesExampleService, private cdr:ChangeDetectorRef ){}
 
   ngOnInit(){
@@ -66,5 +69,10 @@ this.changeDetectionExample();
    this.cdr.detectChanges(); // Manually trigger change detection
     })
 
+  }
+
+
+  changeValue(){
+    this.value =2;
   }
 }
