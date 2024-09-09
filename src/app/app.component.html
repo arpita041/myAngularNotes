@@ -1,21 +1,24 @@
 <div appHighlight> This is the custom directive example. Hover over it to see the effect.</div>
 <div>
-  {{myData}}
-</div>
-<div>{{ value | basicPipe}}</div>
+  {{myData}} &nbsp; {{ value | basicPipe}}</div>
 <button (click)="changeValue()">
 Click me
 </button>
-<div>
-  <a routerLink="/feature/lazyy">Navigate to Lazy comp1</a>
-  <a routerLink="/feature/lazzyAgain">Navigate to lazy comp2</a>
-</div>
+&nbsp; 
+  <a routerLink="/feature/lazyy">Navigate to Lazy comp1</a>  &nbsp; <a routerLink="/feature/lazzyAgain">Navigate to lazy comp2</a>
 <nav>
-  <hr>
-  <h2>View Encapsulation</h2>
-  <hr>
+  <div class="flexBox">
+      <h2>View Encapsulation</h2>
 <a href="/emuted">Emuted</a>
 &nbsp; <a href="/shadowDom">Shadow DOM</a>
 &nbsp; <a href="/none">None</a>
+<hr>
+  </div>
+  <div>
+    <h2>Other components</h2>
+    <a href="/httpReqs">Http Requests example</a>
+  </div>
+
 </nav>
+
 <router-outlet></router-outlet>
