@@ -10,6 +10,8 @@ import { EmutedViewEncapsulationComponent } from './emuted-view-encapsulation/em
 import { ShadowDomViewEncapusulationComponent } from './shadow-dom-view-encapusulation/shadow-dom-view-encapusulation.component';
 import { NonViewEncapusulationComponent } from './non-view-encapusulation/non-view-encapusulation.component';
 import { HttpResponseCompComponent } from './http-response-comp/http-response-comp.component';
+import { ChildCompComponent } from './child-comp/child-comp.component';
+import { ParentCompComponent } from './parent-comp/parent-comp.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HttpResponseCompComponent } from './http-response-comp/http-response-co
     EmutedViewEncapsulationComponent,
     ShadowDomViewEncapusulationComponent,
     NonViewEncapusulationComponent,
-    HttpResponseCompComponent
+    HttpResponseCompComponent,
+    ChildCompComponent,
+    ParentCompComponent
   ],
   imports: [
     BrowserModule,
