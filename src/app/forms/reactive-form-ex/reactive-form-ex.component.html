@@ -1,0 +1,41 @@
+
+  <form [formGroup]='myForm' id="myForm" (ngSubmit)="onSubmit()">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" formControlName="firstname" placeholder="Your name.."
+    [class.error]="myForm.controls['firstname'].invalid">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" formControlName="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" formControlName="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <!-- Radio buttons for gender -->
+    <fieldset>
+      <legend>Gender</legend>
+      <label for="male">
+        <input type="radio" id="male" formControlName="gender" value="male">
+        Male
+      </label>
+      <label for="female">
+        <input type="radio" id="female" formControlName="gender"  value="female">
+        Female
+      </label>
+    </fieldset>
+
+    <!-- Checkboxes for courses -->
+     <legend>Courses:</legend>
+    <span *ngFor="let choice of checks; let i=index" class="col-md-2">
+        <label>{{choice.value}}</label>
+          <input type="checkbox" [value]="choice.value" (change)="onCheckChange($event)">
+          
+      
+    </span>
+
+    <input type="submit" value="Submit">
+  </form>
+

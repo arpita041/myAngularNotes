@@ -12,6 +12,9 @@ import { NonViewEncapusulationComponent } from './non-view-encapusulation/non-vi
 import { HttpResponseCompComponent } from './http-response-comp/http-response-comp.component';
 import { ChildCompComponent } from './child-comp/child-comp.component';
 import { ParentCompComponent } from './parent-comp/parent-comp.component';
+import { NgIfForSwitchExampleComponent } from './ng-if-for-switch-example/ng-if-for-switch-example.component';
+import { ReactiveFormExComponent } from './forms/reactive-form-ex/reactive-form-ex.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,15 @@ import { ParentCompComponent } from './parent-comp/parent-comp.component';
     NonViewEncapusulationComponent,
     HttpResponseCompComponent,
     ChildCompComponent,
-    ParentCompComponent
+    ParentCompComponent,
+    NgIfForSwitchExampleComponent,
+    ReactiveFormExComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

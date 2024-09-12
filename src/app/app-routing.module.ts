@@ -6,6 +6,8 @@ import { NonViewEncapusulationComponent } from './non-view-encapusulation/non-vi
 import { HttpResponseCompComponent } from './http-response-comp/http-response-comp.component';
 import { ParentCompComponent } from './parent-comp/parent-comp.component';
 import { basicGuardExampleGuard } from './guard/basic-guard-example.guard';
+import { NgIfForSwitchExampleComponent } from './ng-if-for-switch-example/ng-if-for-switch-example.component';
+import { ReactiveFormExComponent } from './forms/reactive-form-ex/reactive-form-ex.component';
 
 
 const routes: Routes = [{ path: 'feature', loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule) },
@@ -13,7 +15,9 @@ const routes: Routes = [{ path: 'feature', loadChildren: () => import('./feature
   {path:'shadowDom', component:ShadowDomViewEncapusulationComponent},
   {path:'none', component:NonViewEncapusulationComponent},
   {path:'httpReqs', component:HttpResponseCompComponent},
-  {path:'viewChildEX', component:ParentCompComponent, canActivate:[basicGuardExampleGuard]}
+  {path:'viewChildEX', component:ParentCompComponent, canActivate:[basicGuardExampleGuard]},
+  {path:'ifFor', component:NgIfForSwitchExampleComponent},
+  {path:'form', component:ReactiveFormExComponent}
 ];
 
 @NgModule({

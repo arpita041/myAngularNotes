@@ -1,0 +1,24 @@
+<section *ngIf="displayBox; else elseBlock">Hiee</section>
+<ng-template #elseBlock>Else</ng-template>
+
+<div *ngFor="let content of displayContent">
+    <div>name: {{content.name}}</div>
+    <div *ngFor='let ign of content.ign'>
+        ign: {{ign}}
+    </div>
+</div>
+
+<div [ngSwitch]="chooseIgn">
+    <ng-container *ngSwitchCase="'Flora'">
+      I choose Flora
+    </ng-container>
+    <ng-container *ngSwitchCase="'Nyxia'">
+      I choose Nyxia
+    </ng-container>
+    <ng-container *ngSwitchCase="'Scarlet'">
+      I choose Scarlet
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      Hard to choose
+    </ng-container>
+  </div>
