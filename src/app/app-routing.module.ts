@@ -5,13 +5,15 @@ import { ShadowDomViewEncapusulationComponent } from './shadow-dom-view-encapusu
 import { NonViewEncapusulationComponent } from './non-view-encapusulation/non-view-encapusulation.component';
 import { HttpResponseCompComponent } from './http-response-comp/http-response-comp.component';
 import { ParentCompComponent } from './parent-comp/parent-comp.component';
+import { basicGuardExampleGuard } from './guard/basic-guard-example.guard';
+
 
 const routes: Routes = [{ path: 'feature', loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule) },
   {path:'emuted', component:EmutedViewEncapsulationComponent},
   {path:'shadowDom', component:ShadowDomViewEncapusulationComponent},
   {path:'none', component:NonViewEncapusulationComponent},
   {path:'httpReqs', component:HttpResponseCompComponent},
-  {path:'viewChildEX', component:ParentCompComponent}
+  {path:'viewChildEX', component:ParentCompComponent, canActivate:[basicGuardExampleGuard]}
 ];
 
 @NgModule({
