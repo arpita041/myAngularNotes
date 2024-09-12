@@ -1,0 +1,93 @@
+=<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" novalidate>
+  <div>
+    <label for="fname">First Name</label>
+    <input
+      type="text"
+      id="fname"
+      placeholder="Your name.."
+      name="firstName"
+      [(ngModel)]="user.firstName"
+      #firstName="ngModel"
+      required
+    />
+    <div *ngIf="firstName.invalid && firstName.touched">
+      First name is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="lname">Last Name</label>
+    <input
+      type="text"
+      id="lname"
+      placeholder="Your last name.."
+      name="lastName"
+      [(ngModel)]="user.lastName"
+      #lastName="ngModel"
+      required
+    />
+    <div *ngIf="lastName.invalid && lastName.touched">
+      Last name is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="country">Country</label>
+    <select
+      id="country"
+      name="country"
+      [(ngModel)]="user.country"
+      #country="ngModel"
+      required
+    >
+      <option value="">Select a country</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+    <div *ngIf="country.invalid && country.touched">
+      Country is required.
+    </div>
+  </div>
+
+  <fieldset>
+    <legend>Gender</legend>
+    <label for="male">
+      <input
+        type="radio"
+        id="male"
+        name="gender"
+        value="male"
+        [(ngModel)]="user.gender"
+      />
+      Male
+    </label>
+    <label for="female">
+      <input
+        type="radio"
+        id="female"
+        name="gender"
+        value="female"
+        [(ngModel)]="user.gender"
+      />
+      Female
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Courses:</legend>
+    <div *ngFor="let choice of courses">
+      <label>
+        <input
+          type="checkbox"
+          [value]="choice"
+          (change)="onCheckChange($event)" 
+        
+        />
+        {{ choice }}
+      </label>
+    </div>
+  </fieldset>
+
+  <button type="submit">Submit</button>
+</form>

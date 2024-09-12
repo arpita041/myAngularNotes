@@ -8,6 +8,7 @@ import { ParentCompComponent } from './parent-comp/parent-comp.component';
 import { basicGuardExampleGuard } from './guard/basic-guard-example.guard';
 import { NgIfForSwitchExampleComponent } from './ng-if-for-switch-example/ng-if-for-switch-example.component';
 import { ReactiveFormExComponent } from './forms/reactive-form-ex/reactive-form-ex.component';
+import { TemplateDrivenFormExComponent } from './forms/template-driven-form-ex/template-driven-form-ex.component';
 
 
 const routes: Routes = [{ path: 'feature', loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule) },
@@ -17,7 +18,8 @@ const routes: Routes = [{ path: 'feature', loadChildren: () => import('./feature
   {path:'httpReqs', component:HttpResponseCompComponent},
   {path:'viewChildEX', component:ParentCompComponent, canActivate:[basicGuardExampleGuard]},
   {path:'ifFor', component:NgIfForSwitchExampleComponent},
-  {path:'form', component:ReactiveFormExComponent}
+  {path:'form', component:ReactiveFormExComponent},
+  {path:'tempForm', component:TemplateDrivenFormExComponent}
 ];
 
 @NgModule({
